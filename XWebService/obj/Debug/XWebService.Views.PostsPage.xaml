@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="XWebService.PostsPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="10">
+			<Label x:Name="lblTitle" Text="{Binding title}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" />
+			<Label x:Name="lblBody" Text="{Binding body}" />
+			<ListView x:Name="lstComments" ItemsSource="{Binding .}" BackgroundColor="#C5C8C9" HasUnevenRows="True">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Orientation="Vertical">
+								<Label Text="{Binding name}" FontAttributes="Bold" />
+								<Label Text="{Binding body}" />
+								</StackLayout>
+						</ViewCell>						
+						</DataTemplate>
+				</ListView.ItemTemplate>
+				</ListView>
+			</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
